@@ -5,6 +5,8 @@
     <color name="colorAccent">#6D6E71</color>
 
     <color name="homeBackground">#27AE60</color>
+    <color name="webDevBackground">#DF3500</color>
+    <color name="microsoftTechBackground">#0079D6</color>
     <color name="secondary_fragment_background">#00A198</color>
 
 

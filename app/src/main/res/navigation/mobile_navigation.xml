@@ -13,19 +13,44 @@
         <action
             android:id="@+id/action_nav_home_to_android_Tutorial"
             app:destination="@id/android_Tutorial" />
+        <action
+            android:id="@+id/action_nav_home_to_java_tutorial"
+            app:destination="@id/java_tutorial" />
+        <action
+            android:id="@+id/action_nav_home_to_javaScript_tutorial"
+            app:destination="@id/javaScript_tutorial" />
+        <action
+            android:id="@+id/action_nav_home_to_kotlin_tutorial"
+            app:destination="@id/kotlin_tutorial" />
+        <action
+            android:id="@+id/action_nav_home_to_mvvm_tutorial"
+            app:destination="@id/mvvm_tutorial" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.androidmaster.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_web_development"
+        android:name="com.example.androidmaster.ui.gallery.WebDevFragment"
+        android:label="@string/web_development"
+        tools:layout="@layout/fragment_web_dev" >
+        <action
+            android:id="@+id/action_nav_web_development_to_wordPress_tutorial"
+            app:destination="@id/wordPress_tutorial" />
+        <action
+            android:id="@+id/action_nav_web_development_to_css_tutorial"
+            app:destination="@id/css_tutorial" />
+        <action
+            android:id="@+id/action_nav_web_development_to_google_analytics_tutorial"
+            app:destination="@id/google_analytics_tutorial" />
+        <action
+            android:id="@+id/action_nav_web_development_to_html_tutorial"
+            app:destination="@id/html_tutorial" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.androidmaster.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_microsoft_tech"
+        android:name="com.example.androidmaster.ui.slideshow.MicrosoftTechFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_microsoft_tech" />
 
     <fragment
         android:id="@+id/nav_tools"
@@ -46,16 +71,203 @@
         tools:layout="@layout/fragment_send" />
     <fragment
         android:id="@+id/android_Tutorial"
-        android:name="com.example.androidmaster.Android_Tutorial"
+        android:name="com.example.androidmaster.home_tutorial_fragment.Android_Tutorial"
         android:label="@string/android_tutorial"
         tools:layout="@layout/fragment_android__tutorial" >
         <action
-            android:id="@+id/action_android_Tutorial_to_memorizeRecV"
-            app:destination="@id/memorizeRecV" />
+            android:id="@+id/action_android_Tutorial_to_android_p01_memorizeRecV"
+            app:destination="@id/android_p01_memorizeRecV"/>
+        <action
+            android:id="@+id/action_android_Tutorial_to_android_p02_memorizeRecV"
+            app:destination="@id/android_p02_memorizeRecV" />
     </fragment>
     <fragment
-        android:id="@+id/memorizeRecV"
-        android:name="com.example.androidmaster.memorise.MemorizeRecV"
+        android:id="@+id/android_p01_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.android_memorise_fragment.Android_p01_MemorizeRecV"
         android:label="@string/cardChoose"
         tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/android_p02_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.android_memorise_fragment.Android_p02_MemorizeRecV"
+        android:label="@string/cardChoose"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/java_p01_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.java_memorise_fragment.Java_p01_MemorizeRecV"
+        android:label="Java Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/java_p02_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.java_memorise_fragment.Java_p02_MemorizeRecV"
+        android:label="Java Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/javaScript_p01_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.JavaScript_memorise_fragment.JavaScript_p01_MemorizeRecV"
+        android:label="JavaScript Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/javaScript_p02_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.JavaScript_memorise_fragment.JavaScript_p02_MemorizeRecV"
+        android:label="JavaScript Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/kotlin_p01_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.kotlin_memorise_fragment.Kotlin_p01_MemorizeRecV"
+        android:label="Kotlin Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/kotlin_p02_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.kotlin_memorise_fragment.Kotlin_p02_MemorizeRecV"
+        android:label="Kotlin Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/mvvm_p01_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.mvvm_memorise_fragment.MVVM_p01_MemorizeRecV"
+        android:label="MVVM Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/mvvm_p02_memorizeRecV"
+        android:name="com.example.androidmaster.memorise.mvvm_memorise_fragment.MVVM_p02_MemorizeRecV"
+        android:label="MVVM Card"
+        tools:layout="@layout/fragment_memorize_rec_v" />
+    <fragment
+        android:id="@+id/java_tutorial"
+        android:name="com.example.androidmaster.home_tutorial_fragment.Java_Tutorial"
+        android:label="Java tutorial"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_java_tutorial_to_java_p01_memorizeRecV"
+            app:destination="@id/java_p01_memorizeRecV" />
+        <action
+            android:id="@+id/action_java_tutorial_to_java_p02_memorizeRecV"
+            app:destination="@id/java_p02_memorizeRecV" />
+    </fragment>
+    <fragment
+        android:id="@+id/javaScript_tutorial"
+        android:name="com.example.androidmaster.home_tutorial_fragment.Javascript_Tutorial"
+        android:label="JavaScript tutorial"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_javaScript_tutorial_to_javaScript_p01_memorizeRecV"
+            app:destination="@id/javaScript_p01_memorizeRecV" />
+        <action
+            android:id="@+id/action_javaScript_tutorial_to_javaScript_p02_memorizeRecV"
+            app:destination="@id/javaScript_p02_memorizeRecV" />
+    </fragment>
+    <fragment
+        android:id="@+id/kotlin_tutorial"
+        android:name="com.example.androidmaster.home_tutorial_fragment.Kotlin_Tutorial"
+        android:label="Kotlin tutorial"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_kotlin_tutorial_to_kotlin_p01_memorizeRecV"
+            app:destination="@id/kotlin_p01_memorizeRecV" />
+        <action
+            android:id="@+id/action_kotlin_tutorial_to_kotlin_p02_memorizeRecV"
+            app:destination="@id/kotlin_p02_memorizeRecV" />
+    </fragment>
+    <fragment
+        android:id="@+id/mvvm_tutorial"
+        android:name="com.example.androidmaster.home_tutorial_fragment.MVVM_Tutorial"
+        android:label="MVVM tutorial"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_mvvm_tutorial_to_mvvm_p01_memorizeRecV"
+            app:destination="@id/mvvm_p01_memorizeRecV" />
+        <action
+            android:id="@+id/action_mvvm_tutorial_to_mvvm_p02_memorizeRecV"
+            app:destination="@id/mvvm_p02_memorizeRecV" />
+    </fragment>
+    <fragment
+        android:id="@+id/html_tutorial"
+        android:name="com.example.androidmaster.webDev_tutorial_fragment.HTML_Tutorial"
+        android:label="HTML tutorial"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_html_tutorial_to_memorise_recV"
+            app:destination="@id/memorise_recV">
+            <argument
+                android:name="memorise_p01"
+                app:argType="string"
+                android:defaultValue="html_mem_p01"/>
+        </action>
+        <action
+            android:id="@+id/action_html_tutorial_to_memorise_recV_p2"
+            app:destination="@id/memorise_recV_p2" >
+            <argument
+                android:name="memorise_p02"
+                app:argType="string"
+                android:defaultValue="html_mem_p02"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/css_tutorial"
+        android:name="com.example.androidmaster.webDev_tutorial_fragment.CSS_Tutorial"
+        android:label="CSS tutorial"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_css_tutorial_to_memorise_recV"
+            app:destination="@id/memorise_recV" >
+            <argument
+                android:name="memorise_p01"
+                app:argType="string"
+                android:defaultValue="css_mem_p01"/>
+        </action>
+        <action
+            android:id="@+id/action_css_tutorial_to_memorise_recV_p2"
+            app:destination="@id/memorise_recV_p2" >
+            <argument
+                android:name="memorise_p02"
+                app:argType="string"
+                android:defaultValue="css_mem_p02"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/wordPress_tutorial"
+        android:name="com.example.androidmaster.webDev_tutorial_fragment.WordPress_Tutorial"
+        android:label="WordPress Tutorial"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_wordPress_tutorial_to_memorise_recV"
+            app:destination="@id/memorise_recV" >
+            <argument
+                android:name="memorise_p01"
+                app:argType="string"
+                android:defaultValue="wordpress_mem_p01"/>
+        </action>
+        <action
+            android:id="@+id/action_wordPress_tutorial_to_memorise_recV_p2"
+            app:destination="@id/memorise_recV_p2" >
+            <argument
+                android:name="memorise_p02"
+                app:argType="string"
+                android:defaultValue="wordpress_mem_p02"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/google_analytics_tutorial"
+        android:name="com.example.androidmaster.webDev_tutorial_fragment.GoogleAnalytics_Tutorial"
+        android:label="Google Analytics"
+        tools:layout="@layout/fragment_android__tutorial">
+        <action
+            android:id="@+id/action_google_analytics_tutorial_to_memorise_recV"
+            app:destination="@id/memorise_recV" >
+            <argument
+                android:name="memorise_p01"
+                app:argType="string"
+                android:defaultValue="google_analytic_mem_p01"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/memorise_recV"
+        android:name="com.example.androidmaster.memorise.MemorizeRecV"
+        android:label="@string/cardChoose"
+        tools:layout="@layout/fragment_memorize_rec_v"/>
+    <fragment
+        android:id="@+id/memorise_recV_p2"
+        android:name="com.example.androidmaster.memorise.MemorizeRecV_p2"
+        android:label="@string/cardChoose"
+        tools:layout="@layout/fragment_memorize_rec_v"/>
+
 </navigation>

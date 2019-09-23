@@ -1,4 +1,4 @@
-package com.example.androidmaster.ui.gallery;
+package com.example.androidmaster.ui.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,20 +14,20 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.androidmaster.R;
 
-public class GalleryFragment extends Fragment {
+public class MicrosoftTechFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private MicrosoftTechViewModel microsoftTechViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        microsoftTechViewModel =
+                ViewModelProviders.of(this).get(MicrosoftTechViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_microsoft_tech, container, false);
+//        final TextView textView = root.findViewById(R.id.text_slideshow);
+        microsoftTechViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+//                textView.setText(s);
             }
         });
         return root;

@@ -1,4 +1,4 @@
-package com.example.androidmaster.memorise;
+package com.example.androidmaster.memorise.JavaScript_memorise_fragment;
 
 
 import android.content.Intent;
@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidmaster.Parameter;
 import com.example.androidmaster.R;
+import com.example.androidmaster.memorise.MemorizeVersion1;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,15 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MemorizeRecV extends Fragment {
+public class JavaScript_p01_MemorizeRecV extends Fragment {
 
 //    private RecyclerView mRecycler_Memorize;
     private RecyclerView mRecycler_Memorize;
     private DatabaseReference mDatabase;
-    String childName_fromFragment;
 
     View rootView;
-    public MemorizeRecV() {
+    public JavaScript_p01_MemorizeRecV() {
         // Required empty public constructor
     }
 
@@ -41,9 +41,7 @@ public class MemorizeRecV extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_memorize_rec_v, container, false);
-        assert getArguments() != null;
-        childName_fromFragment = getArguments().getString("memorise_p01");
-        mDatabase = FirebaseDatabase.getInstance().getReference().child(childName_fromFragment);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("javascript_mem_p01");
         mDatabase.keepSynced(false);
         mRecycler_Memorize = rootView.findViewById(R.id.mRecycler_Memorize);
         mRecycler_Memorize.setHasFixedSize(true);
@@ -70,7 +68,7 @@ public class MemorizeRecV extends Fragment {
                             public void onClick(View v) {
                                 Intent intent = new Intent(getActivity(), MemorizeVersion1.class);
                                 intent.putExtra("key_name", post_key);
-                                intent.putExtra("childName", childName_fromFragment);
+                                intent.putExtra("childName", "javascript_mem_p01");
                                 Toast.makeText(getContext(), "Please make sure you turn off the rotation of your device", Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                             }

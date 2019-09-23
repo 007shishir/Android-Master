@@ -21,7 +21,7 @@ import com.example.androidmaster.R;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private HomeViewModel homeViewModel;
-    private LinearLayout mLL_android_studio;
+    private LinearLayout mLL_android_studio, mLL_java, mLL_kotlin, mLL_mvvm, mLL_javascript;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -31,8 +31,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
         mLL_android_studio = root.findViewById(R.id.mLL_android_studio);
+        mLL_java = root.findViewById(R.id.mLL_java);
+        mLL_kotlin = root.findViewById(R.id.mLL_kotlin);
+        mLL_mvvm = root.findViewById(R.id.mLL_mvvm);
+        mLL_javascript = root.findViewById(R.id.mLL_javascript);
 
         mLL_android_studio.setOnClickListener(this);
+        mLL_java.setOnClickListener(this);
+        mLL_kotlin.setOnClickListener(this);
+        mLL_mvvm.setOnClickListener(this);
+        mLL_javascript.setOnClickListener(this);
 
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
@@ -49,6 +57,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.mLL_android_studio:
                 Navigation.findNavController(v).navigate(R.id.action_nav_home_to_android_Tutorial);
+                break;
+            case R.id.mLL_java:
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_java_tutorial);
+                break;
+            case R.id.mLL_kotlin:
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_kotlin_tutorial);
+                break;
+            case R.id.mLL_mvvm:
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_mvvm_tutorial);
+                break;
+            case R.id.mLL_javascript:
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_javaScript_tutorial);
                 break;
             default:
                 Toast.makeText(getContext(), "this is default", Toast.LENGTH_SHORT).show();

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/secondary_fragment_background"
-    tools:context=".memorise.MemorizeRecV">
+    tools:context=".memorise.android_memorise_fragment.Android_p01_MemorizeRecV">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mRecycler_Memorize"
