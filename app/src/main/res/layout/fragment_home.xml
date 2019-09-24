@@ -132,7 +132,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/mLL_javascript"
+                android:id="@+id/mLL_restApi"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -144,7 +144,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Javascript"
+                    android:text="REST API"
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="25sp"

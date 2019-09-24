@@ -17,13 +17,13 @@ import com.example.androidmaster.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MVVM_Tutorial extends Fragment implements View.OnClickListener {
+public class Rest_Api_Tutorial extends Fragment implements View.OnClickListener {
 
     private TextView mTxt_and_mem_p01, mTxt_and_mem_p02, mTxt_and_mem_p03, mTxt_and_mem_p04,
             mTxt_and_mcq_p01, mTxt_and_mcq_p02, mTxt_and_mcq_p03, mTxt_and_mcq_p04;
     View rootView;
 
-    public MVVM_Tutorial() {
+    public Rest_Api_Tutorial() {
         // Required empty public constructor
     }
 
@@ -59,10 +59,10 @@ public class MVVM_Tutorial extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_mvvm_tutorial_to_memorise_recV);
+                Navigation.findNavController(v).navigate(R.id.action_rest_api_tutorial_to_memorise_recV);
                 break;
             case R.id.mTxt_and_mem_p02:
-                Navigation.findNavController(v).navigate(R.id.action_mvvm_tutorial_to_memorise_recV_p2);
+                Navigation.findNavController(v).navigate(R.id.action_rest_api_tutorial_to_memorise_recV_p2);
                 break;
             case R.id.mTxt_and_mem_p03:
                 printingToastMessage();

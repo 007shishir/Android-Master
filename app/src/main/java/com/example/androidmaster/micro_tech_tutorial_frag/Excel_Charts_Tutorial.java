@@ -1,4 +1,4 @@
-package com.example.androidmaster.home_tutorial_fragment;
+package com.example.androidmaster.micro_tech_tutorial_frag;
 
 
 import android.os.Bundle;
@@ -17,13 +17,13 @@ import com.example.androidmaster.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MVVM_Tutorial extends Fragment implements View.OnClickListener {
+public class Excel_Charts_Tutorial extends Fragment implements View.OnClickListener {
 
     private TextView mTxt_and_mem_p01, mTxt_and_mem_p02, mTxt_and_mem_p03, mTxt_and_mem_p04,
             mTxt_and_mcq_p01, mTxt_and_mcq_p02, mTxt_and_mcq_p03, mTxt_and_mcq_p04;
     View rootView;
 
-    public MVVM_Tutorial() {
+    public Excel_Charts_Tutorial() {
         // Required empty public constructor
     }
 
@@ -59,10 +59,11 @@ public class MVVM_Tutorial extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_mvvm_tutorial_to_memorise_recV);
+                Navigation.findNavController(v).navigate(R.id.action_excel_charts_tutorial_to_memorise_recV);
                 break;
             case R.id.mTxt_and_mem_p02:
-                Navigation.findNavController(v).navigate(R.id.action_mvvm_tutorial_to_memorise_recV_p2);
+                printingToastMessage();
+//                Navigation.findNavController(v).navigate(R.id.action_css_tutorial_to_memorise_recV_p2);
                 break;
             case R.id.mTxt_and_mem_p03:
                 printingToastMessage();
@@ -89,7 +90,7 @@ public class MVVM_Tutorial extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void printingToastMessage(){
+    public void printingToastMessage() {
         Toast.makeText(getContext(), "This section is under development", Toast.LENGTH_SHORT).show();
     }
 }

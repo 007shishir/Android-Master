@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NavigationRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -21,7 +20,7 @@ import com.example.androidmaster.R;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private HomeViewModel homeViewModel;
-    private LinearLayout mLL_android_studio, mLL_java, mLL_kotlin, mLL_mvvm, mLL_javascript;
+    private LinearLayout mLL_android_studio, mLL_java, mLL_kotlin, mLL_mvvm, mLL_restApi;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -34,13 +33,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mLL_java = root.findViewById(R.id.mLL_java);
         mLL_kotlin = root.findViewById(R.id.mLL_kotlin);
         mLL_mvvm = root.findViewById(R.id.mLL_mvvm);
-        mLL_javascript = root.findViewById(R.id.mLL_javascript);
+        mLL_restApi = root.findViewById(R.id.mLL_restApi);
 
         mLL_android_studio.setOnClickListener(this);
         mLL_java.setOnClickListener(this);
         mLL_kotlin.setOnClickListener(this);
         mLL_mvvm.setOnClickListener(this);
-        mLL_javascript.setOnClickListener(this);
+        mLL_restApi.setOnClickListener(this);
 
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
@@ -67,8 +66,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.mLL_mvvm:
                 Navigation.findNavController(v).navigate(R.id.action_nav_home_to_mvvm_tutorial);
                 break;
-            case R.id.mLL_javascript:
-                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_javaScript_tutorial);
+            case R.id.mLL_restApi:
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_rest_api_tutorial);
                 break;
             default:
                 Toast.makeText(getContext(), "this is default", Toast.LENGTH_SHORT).show();

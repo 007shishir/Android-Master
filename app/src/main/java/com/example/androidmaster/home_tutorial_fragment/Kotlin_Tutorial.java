@@ -59,10 +59,10 @@ public class Kotlin_Tutorial extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_kotlin_tutorial_to_kotlin_p01_memorizeRecV);
+                Navigation.findNavController(v).navigate(R.id.action_kotlin_tutorial_to_memorise_recV);
                 break;
             case R.id.mTxt_and_mem_p02:
-                Navigation.findNavController(v).navigate(R.id.action_kotlin_tutorial_to_kotlin_p02_memorizeRecV);
+                Navigation.findNavController(v).navigate(R.id.action_kotlin_tutorial_to_memorise_recV_p2);
                 break;
             case R.id.mTxt_and_mem_p03:
                 printingToastMessage();

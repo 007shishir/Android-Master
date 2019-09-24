@@ -69,7 +69,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="gone">
 
                 <TextView
                     android:id="@+id/mTxt_and_mem_p03"
@@ -148,7 +149,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="gone">
 
                 <TextView
                     android:id="@+id/mTxt_and_mcq_p03"

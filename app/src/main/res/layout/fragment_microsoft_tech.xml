@@ -53,7 +53,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/mLL_html"
+                android:id="@+id/mLL_excel_2010"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -73,6 +73,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/mLL_word_2010"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -92,6 +93,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/mLL_advanced_excel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -111,6 +113,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/mLL_excel_function"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -130,6 +133,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/mLL_advanced_excel_charts"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
@@ -149,6 +153,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/mLL_excel_pivot_table"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"

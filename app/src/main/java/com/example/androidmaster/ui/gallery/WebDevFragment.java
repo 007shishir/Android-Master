@@ -20,7 +20,8 @@ import com.example.androidmaster.R;
 public class WebDevFragment extends Fragment implements View.OnClickListener {
 
     private WebDevViewModel webDevViewModel;
-    private LinearLayout mLL_html, mLL_css, mLL_wordPress, mLL_googleAnalytics;
+    private LinearLayout mLL_html, mLL_css, mLL_wordPress, mLL_googleAnalytics,
+            mLL_JavaScript;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -32,11 +33,13 @@ public class WebDevFragment extends Fragment implements View.OnClickListener {
         mLL_css = root.findViewById(R.id.mLL_css);
         mLL_wordPress = root.findViewById(R.id.mLL_wordPress);
         mLL_googleAnalytics = root.findViewById(R.id.mLL_googleAnalytics);
+        mLL_JavaScript = root.findViewById(R.id.mLL_JavaScript);
 
         mLL_html.setOnClickListener(this);
         mLL_css.setOnClickListener(this);
         mLL_wordPress.setOnClickListener(this);
         mLL_googleAnalytics.setOnClickListener(this);
+        mLL_JavaScript.setOnClickListener(this);
 
         webDevViewModel.getText().observe(this, new Observer<String>() {
             @Override
@@ -61,6 +64,9 @@ public class WebDevFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.mLL_googleAnalytics:
                 Navigation.findNavController(v).navigate(R.id.action_nav_web_development_to_google_analytics_tutorial);
+                break;
+            case R.id.mLL_JavaScript:
+                Navigation.findNavController(v).navigate(R.id.action_nav_web_development_to_javaScript_tutorial);
                 break;
             default:
                 showingToastMessage();
