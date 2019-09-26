@@ -59,11 +59,12 @@ public class Excel_pivotTable_Tutorial extends Fragment implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_excel_pivot_tutorial_to_memorise_recV);
+                Bundle memorise_p01 = new Bundle();
+                memorise_p01.putString("child_name", "pivot_tab_mem_p01");
+                Navigation.findNavController(v).navigate(R.id.action_excel_pivot_tutorial_to_memorise_recV, memorise_p01);
                 break;
             case R.id.mTxt_and_mem_p02:
                 printingToastMessage();
-//                Navigation.findNavController(v).navigate(R.id.action_css_tutorial_to_memorise_recV_p2);
                 break;
             case R.id.mTxt_and_mem_p03:
                 printingToastMessage();

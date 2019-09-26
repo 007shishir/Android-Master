@@ -59,10 +59,14 @@ public class Java_Tutorial extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_java_tutorial_to_memorise_recV);
+                Bundle memorise_p01 = new Bundle();
+                memorise_p01.putString("child_name", "java_mem_p01");
+                Navigation.findNavController(v).navigate(R.id.action_java_tutorial_to_memorise_recV, memorise_p01);
                 break;
             case R.id.mTxt_and_mem_p02:
-                Navigation.findNavController(v).navigate(R.id.action_java_tutorial_to_memorise_recV_p2);
+                Bundle memorise_p02 = new Bundle();
+                memorise_p02.putString("child_name", "java_mem_p02");
+                Navigation.findNavController(v).navigate(R.id.action_java_tutorial_to_memorise_recV, memorise_p02);
                 break;
             case R.id.mTxt_and_mem_p03:
                 printingToastMessage();

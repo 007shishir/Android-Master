@@ -59,11 +59,14 @@ public class WordPress_Tutorial extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_wordPress_tutorial_to_memorise_recV);
+                Bundle memorise_p01 = new Bundle();
+                memorise_p01.putString("child_name", "wordpress_mem_p01");
+                Navigation.findNavController(v).navigate(R.id.action_wordPress_tutorial_to_memorise_recV, memorise_p01);
                 break;
             case R.id.mTxt_and_mem_p02:
-                Navigation.findNavController(v).navigate(R.id.action_wordPress_tutorial_to_memorise_recV_p2);
-                break;
+                Bundle memorise_p02 = new Bundle();
+                memorise_p02.putString("child_name", "wordpress_mem_p02");
+                Navigation.findNavController(v).navigate(R.id.action_wordPress_tutorial_to_memorise_recV, memorise_p02);                break;
             case R.id.mTxt_and_mem_p03:
                 printingToastMessage();
                 break;

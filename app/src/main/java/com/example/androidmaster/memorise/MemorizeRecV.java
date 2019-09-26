@@ -42,7 +42,7 @@ public class MemorizeRecV extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_memorize_rec_v, container, false);
         assert getArguments() != null;
-        childName_fromFragment = getArguments().getString("memorise_p01");
+        childName_fromFragment = getArguments().getString("child_name");
         mDatabase = FirebaseDatabase.getInstance().getReference().child(childName_fromFragment);
         mDatabase.keepSynced(false);
         mRecycler_Memorize = rootView.findViewById(R.id.mRecycler_Memorize);

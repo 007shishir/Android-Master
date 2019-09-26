@@ -59,7 +59,9 @@ public class GoogleAnalytics_Tutorial extends Fragment implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_google_analytics_tutorial_to_memorise_recV);
+                Bundle memorise_p01 = new Bundle();
+                memorise_p01.putString("child_name", "google_analytic_mem_p01");
+                Navigation.findNavController(v).navigate(R.id.action_google_analytics_tutorial_to_memorise_recV, memorise_p01);
                 break;
             case R.id.mTxt_and_mem_p02:
                 printingToastMessage();

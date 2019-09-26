@@ -1,7 +1,8 @@
-package com.example.androidmaster.memorise;
-
+package com.example.androidmaster.mcq;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,41 +17,42 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.androidmaster.Parameter;
 import com.example.androidmaster.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class MemorizeRecV_p2 extends Fragment {
+import static android.content.Context.CONNECTIVITY_SERVICE;
 
-//    private RecyclerView mRecycler_Memorize;
-    private RecyclerView mRecycler_Memorize;
+public class McqRecV extends Fragment {
+
+    private RecyclerView mRecycler_Mcq;
     private DatabaseReference mDatabase;
+    private View v;
+    private ConnectivityManager connectivityManager;
     String childName_fromFragment;
 
-    View rootView;
-    public MemorizeRecV_p2() {
+    public McqRecV() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView = inflater.inflate(R.layout.fragment_memorize_rec_v, container, false);
+        v = inflater.inflate(R.layout.fragment_memorize_rec_v, container, false);
+        connectivityManager = (ConnectivityManager) Objects.requireNonNull(getActivity()).getSystemService(CONNECTIVITY_SERVICE);
         assert getArguments() != null;
-        childName_fromFragment = getArguments().getString("memorise_p02");
+        childName_fromFragment = getArguments().getString("child_name");
         mDatabase = FirebaseDatabase.getInstance().getReference().child(childName_fromFragment);
         mDatabase.keepSynced(false);
-        mRecycler_Memorize = rootView.findViewById(R.id.mRecycler_Memorize);
-        mRecycler_Memorize.setHasFixedSize(true);
-        mRecycler_Memorize.setLayoutManager(new LinearLayoutManager(getContext()));
-        return rootView;
-    }
+        mRecycler_Mcq = v.findViewById(R.id.mRecycler_Memorize);
+        mRecycler_Mcq.setHasFixedSize(true);
+        mRecycler_Mcq.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        return v;
+    }
 
     @Override
     public void onStart() {
@@ -68,17 +70,23 @@ public class MemorizeRecV_p2 extends Fragment {
                         viewHolder.mView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(getActivity(), MemorizeVersion1.class);
-                                intent.putExtra("key_name", post_key);
-                                intent.putExtra("childName", childName_fromFragment);
-                                Toast.makeText(getContext(), "Please make sure you turn off the rotation of your device", Toast.LENGTH_LONG).show();
-                                startActivity(intent);
+                                assert connectivityManager != null;
+                                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                                if (networkInfo != null && networkInfo.isConnected()) {
+                                    Intent intent = new Intent(getActivity(), McqVersion1.class);
+                                    intent.putExtra("key_name", post_key);
+                                    intent.putExtra("childName", childName_fromFragment);
+                                    Toast.makeText(getContext(), "Please make sure you turn off the rotation of your device", Toast.LENGTH_LONG).show();
+                                    startActivity(intent);
+                                } else {
+                                    Snackbar.make(Objects.requireNonNull(getActivity()).findViewById(R.id.drawer_layout), "No Network Connection...", Snackbar.LENGTH_LONG).show();
+                                }
                             }
                         });
 
                     }
                 };
-        mRecycler_Memorize.setAdapter(firebaseRecyclerAdapter);
+        mRecycler_Mcq.setAdapter(firebaseRecyclerAdapter);
     }
 
     public static class ParameterViewHolder extends RecyclerView.ViewHolder

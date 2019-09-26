@@ -155,114 +155,65 @@ public class MemorizeVersion1 extends AppCompatActivity {
     }
 
     private void header_topic_selection() {
-        switch (mPost_key) {
-            case "9010":
-                mTxt_Header_topic.setText("chapter 1");
+        switch (child_Name) {
+            case "android_mem_p02":
+            case "memorise_p01":
+            case "android_mcq_p01":
+            case "android_mcq_p02":
+                mTxt_Header_topic.setText("Android Studio");
                 break;
-            case "9012":
-                mTxt_Header_topic.setText("chapter 1");
+            case "css_mem_p01":
+            case "css_mem_p02":
+                mTxt_Header_topic.setText("CSS");
                 break;
-            case "9020":
-                mTxt_Header_topic.setText("chapter 2");
+            case "excel2010_mem_p01":
+                mTxt_Header_topic.setText("Excel 2010");
                 break;
-            case "9021":
-                mTxt_Header_topic.setText("chapter 2");
+            case "adv_excel_mem_p01":
+                mTxt_Header_topic.setText("Advance Excel");
                 break;
-            case "9030":
-                mTxt_Header_topic.setText("chapter 3");
+            case "excel_chart_mem_p01":
+                mTxt_Header_topic.setText("Excel Charts");
                 break;
-            case "9031":
-                mTxt_Header_topic.setText("chapter 3");
+            case "excel_func_mem_p01":
+                mTxt_Header_topic.setText("Excel Function");
                 break;
-            case "9040":
-                mTxt_Header_topic.setText("chapter 4");
+            case "google_analytic_mem_p01":
+                mTxt_Header_topic.setText("Google Analytics");
                 break;
-            case "9041":
-                mTxt_Header_topic.setText("chapter 4");
+            case "html_mem_p01":
+            case "html_mem_p02":
+                mTxt_Header_topic.setText("HTML");
                 break;
-            case "9050":
-                mTxt_Header_topic.setText("chapter 5");
+            case "java_mem_p01":
+            case "java_mem_p02":
+                mTxt_Header_topic.setText("Java");
                 break;
-            case "9051":
-                mTxt_Header_topic.setText("chapter 5");
+            case "javascript_mem_p01":
+            case "javascript_mem_p02":
+                mTxt_Header_topic.setText("JavaScript");
                 break;
-            case "10000":
-                mTxt_Header_topic.setText("chapter 6");
+            case "kotlin_mem_p01":
+            case "kotlin_mem_p02":
+                mTxt_Header_topic.setText("Kotlin");
                 break;
-            case "10001":
-                mTxt_Header_topic.setText("chapter 6");
+            case "mvvm_mem_p01":
+            case "mvvm_mem_p02":
+                mTxt_Header_topic.setText("MVVM");
                 break;
-            case "10002":
-                mTxt_Header_topic.setText("chapter 6");
+            case "pivot_tab_mem_p01":
+                mTxt_Header_topic.setText("Excel Pivot Table");
                 break;
-            case "10003":
-                mTxt_Header_topic.setText("chapter 6");
+            case "rest_api_mem_p01":
+            case "rest_api_mem_p02":
+                mTxt_Header_topic.setText("REST API");
                 break;
-            case "10070":
-                mTxt_Header_topic.setText("chapter 7");
+            case "word2010_mem_p01":
+                mTxt_Header_topic.setText("Word 2010");
                 break;
-            case "10071":
-                mTxt_Header_topic.setText("chapter 7");
-                break;
-            case "10072":
-                mTxt_Header_topic.setText("chapter 7");
-                break;
-            case "10073":
-                mTxt_Header_topic.setText("chapter 7");
-                break;
-            case "10081":
-                mTxt_Header_topic.setText("chapter 8");
-                break;
-            case "10082":
-                mTxt_Header_topic.setText("chapter 8");
-                break;
-            case "10090":
-                mTxt_Header_topic.setText("chapter 9");
-                break;
-            case "10091":
-                mTxt_Header_topic.setText("chapter 9");
-                break;
-            case "10100":
-                mTxt_Header_topic.setText("chapter 10");
-                break;
-            case "10101":
-                mTxt_Header_topic.setText("chapter 10");
-                break;
-            case "10110":
-                mTxt_Header_topic.setText("chapter 11");
-                break;
-            case "10111":
-                mTxt_Header_topic.setText("chapter 11");
-                break;
-            case "10120":
-                mTxt_Header_topic.setText("chapter 12");
-                break;
-            case "10121":
-                mTxt_Header_topic.setText("chapter 12");
-                break;
-            case "10130":
-                mTxt_Header_topic.setText("chapter 13");
-                break;
-            case "10131":
-                mTxt_Header_topic.setText("chapter 13");
-                break;
-            case "10140":
-                mTxt_Header_topic.setText("chapter 14");
-                break;
-            case "10141":
-                mTxt_Header_topic.setText("chapter 14");
-                break;
-            case "10150":
-                mTxt_Header_topic.setText("chapter 15");
-                break;
-            case "10151":
-                mTxt_Header_topic.setText("chapter 15");
-                break;
-            case "10160":
-                mTxt_Header_topic.setText("chapter 16");
-                break;
-            case "10161":
-                mTxt_Header_topic.setText("chapter 16");
+            case "wordpress_mem_p01":
+            case "wordpress_mem_p02":
+                mTxt_Header_topic.setText("WordPress");
                 break;
             default:
                 mTxt_Header_topic.setText("memorize");
@@ -280,7 +231,8 @@ public class MemorizeVersion1 extends AppCompatActivity {
         id = child_Name + "_" + mPost_key + "_" + questionN[mQuestNum - 1];
         //count  the number of primary learning and master questioin for the progress bar
         countPriLernMast();
-        final List<Memorize_entity> readQfromDatabase = Memorize_database.getINSTANCE(getApplicationContext()).memorize_dao().select_question(id);
+        final List<Memorize_entity> readQfromDatabase =
+                Memorize_database.getINSTANCE(getApplicationContext()).memorize_dao().select_question(id);
 
 
         if (readQfromDatabase.isEmpty()) {
@@ -402,7 +354,7 @@ public class MemorizeVersion1 extends AppCompatActivity {
     }
 
     public void getQuestion_Explanation() {
-        Firebase mQuestion = new Firebase("https://businessresearch-ad180.firebaseio.com/" + child_Name + "/" + mPost_key + "/" + mQuestNum + "/q");
+        Firebase mQuestion = new Firebase("https://android-master-d065e.firebaseio.com/" + child_Name + "/" + mPost_key + "/" + mQuestNum + "/q");
         mQuestion.addValueEventListener(new com.firebase.client.ValueEventListener() {
             @Override
             public void onDataChange(com.firebase.client.DataSnapshot dataSnapshot) {

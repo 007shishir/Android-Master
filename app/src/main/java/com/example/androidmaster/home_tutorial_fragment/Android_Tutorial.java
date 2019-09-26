@@ -60,10 +60,14 @@ public class Android_Tutorial extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mTxt_and_mem_p01:
-                Navigation.findNavController(v).navigate(R.id.action_android_Tutorial_to_memorise_recV);
+                Bundle memorise_p01 = new Bundle();
+                memorise_p01.putString("child_name", "memorise_p01");
+                Navigation.findNavController(v).navigate(R.id.action_android_Tutorial_to_memorise_recV, memorise_p01);
                 break;
             case R.id.mTxt_and_mem_p02:
-                Navigation.findNavController(v).navigate(R.id.action_android_Tutorial_to_memorise_recV_p2);
+                Bundle memorise_p02 = new Bundle();
+                memorise_p02.putString("child_name", "android_mem_p02");
+                Navigation.findNavController(v).navigate(R.id.action_android_Tutorial_to_memorise_recV, memorise_p02);
                 break;
             case R.id.mTxt_and_mem_p03:
                 printingToastMessage();
@@ -72,10 +76,14 @@ public class Android_Tutorial extends Fragment implements View.OnClickListener {
                 printingToastMessage();
                 break;
             case R.id.mTxt_and_mcq_p01:
-                printingToastMessage();
+                Bundle mcq_p01 = new Bundle();
+                mcq_p01.putString("child_name", "android_mcq_p01");
+                Navigation.findNavController(v).navigate(R.id.action_android_Tutorial_to_mcq_recV_p1, mcq_p01);
                 break;
             case R.id.mTxt_and_mcq_p02:
-                printingToastMessage();
+                Bundle mcq_p02 = new Bundle();
+                mcq_p02.putString("child_name", "android_mcq_p02");
+                Navigation.findNavController(v).navigate(R.id.action_android_Tutorial_to_mcq_recV_p1, mcq_p02);
                 break;
             case R.id.mTxt_and_mcq_p03:
                 printingToastMessage();
