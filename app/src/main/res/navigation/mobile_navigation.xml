@@ -134,10 +134,19 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.androidmaster.ui.tools.ToolsFragment"
+        android:id="@+id/nav_extra_knowledge"
+        android:name="com.example.androidmaster.ui.tools.Extra_Knowledge"
         android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_extra_knowledge" >
+        <action
+            android:id="@+id/action_nav_extra_knowledge_to_ek_mcq_memorise_option"
+            app:destination="@id/ek_mcq_memorise_option" />
+    </fragment>
+    <fragment
+        android:id="@+id/ek_mcq_memorise_option"
+        android:name="com.example.androidmaster.ui.tools.EK_mcq_memorise_option"
+        android:label="Choose Option"
+        tools:layout="@layout/fragment_android__tutorial" />
 
     <fragment
         android:id="@+id/nav_share"

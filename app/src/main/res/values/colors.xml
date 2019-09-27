@@ -8,6 +8,7 @@
     <color name="webDevBackground">#DF3500</color>
     <color name="microsoftTechBackground">#0079D6</color>
     <color name="secondary_fragment_background">#00A198</color>
+    <color name="extra_knowledge">#AD6802</color>
 
 
 </resources>
