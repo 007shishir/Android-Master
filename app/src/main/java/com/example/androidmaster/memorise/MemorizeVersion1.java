@@ -21,6 +21,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+//import com.github.chrisbanes.photoview.PhotoViewAttacher;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
@@ -32,6 +33,7 @@ public class MemorizeVersion1 extends AppCompatActivity {
     Memorize_ViewModel viewModel;
     boolean clicked;
     private ConnectivityManager connectivityManager;
+//    PhotoViewAttacher photoViewAttacher;
 
     private ProgressBar progressBar2, progressPrimary, progressLearning, progressMaster;
     private Handler handler = new Handler();
@@ -3929,6 +3931,9 @@ public class MemorizeVersion1 extends AppCompatActivity {
             Picasso.get().load(a)
                     .placeholder(R.drawable.ic_menu_camera)
                     .into(imageView_memorise);
+//            photoViewAttacher = new PhotoViewAttacher(imageView_memorise);
+//            photoViewAttacher.update();
+
         }
     }
 }
